@@ -1,4 +1,60 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dog Info App</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Your custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="container my-4">
+    <div class="row">
+      <h1 class="col">🐾 Dog Info App</h1>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Treat counter -->
+    <div class="my-4">
+      <button id="give-treat-btn" class="btn btn-success">Give Treat</button>
+      <p>Treats Given: <span id="count">0</span></p>
+    </div>
+
+    <!-- Breed category selection -->
+    <div class="my-4">
+      <label for="breed-select" class="form-label">Choose a breed category:</label>
+      <select id="breed-select" class="form-select">
+        <option value="">-- Select one --</option>
+        <option value="big">Big Breeds</option>
+        <option value="small">Little Breeds</option>
+      </select>
+    </div>
+
+    <!-- Breed info popup (you can fill this via JS) -->
+    <div id="breed-info-popup" class="alert alert-info d-none">
+      <strong>Breed Info:</strong> <span id="breed-info-text"></span>
+    </div>
+
+    <!-- Random dog fact -->
+    <div class="my-4">
+      <button id="fact-btn" class="btn btn-primary">Get Random Dog Fact</button>
+      <p id="dog-fact-text" class="mt-2 text-muted"></p>
+    </div>
+
+  </main>
+
+  <!-- JS -->
+  <script src="js/script.js" defer></script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -18,4 +74,4 @@
   </main>
   <script src="js/script.js" defer></script>
 </body>
-</html>
+</html> -->
