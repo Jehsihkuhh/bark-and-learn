@@ -19,27 +19,36 @@
 
   <main class="container">
 
-    <!-- Treat counter -->
+    <!-- treat counter -->
     <div class="my-4">
       <button id="give-treat-btn" class="btn btn-success" style="font-size: 2rem;">🐶</button>
       <p>Treats Given: <span id="count">0</span></p>
     </div>
 
-    <!-- Breed category selection -->
-    <!-- Jumbotron -->
-<div class="jumbotron text-center bg-light p-5 mb-4" id="featured-dog">
-  <h1 class="display-5">🐾 Featured Dog</h1>
-  <img id="featured-img" class="img-fluid rounded" src="https://images.dog.ceo/breeds/labrador/n02099712_2441.jpg" style="max-height: 300px;">
-  <h3 id="featured-name" class="mt-3">Labrador</h3>
-</div>
+     <!-- Breed category section -->
+      <!-- Dropdown Menu to Choose Dog Breed Size -->
+     <div class="text-center mb-4">
+      <label for="breed-select" class="form-label h5">Select Dog Breed Size</label>
+      <select id="breed-select" class="form-select w-auto d-inline-block">
+      <option value="big">Big Breeds</option>
+      <option value="small">Small Breeds</option>
+      </select>
+    </div>
 
-<!-- Dog Gallery Grid -->
+    <!-- Featured Dog Jumbotron (where selected dog will appear) -->
+    <div class="jumbotron text-center bg-light p-5 mb-4" id="featured-dog">
+      <h1 class="display-5">🐾 Featured Dog</h1>
+      <img id="featured-img" class="img-fluid rounded" src="" style="max-height: 300px;">
+      <h3 id="featured-name" class="mt-3">Select a breed to see it here!</h3>
+    </div>
+
+    <!-- Dog Gallery Grid -->
 <div class="container">
   <div class="row">
     <!-- Big Breeds -->
-    <div class="col col-12 col-md-6">
+    <div class="col col-12 col-md-6" id="big-breeds">
       <h2>Big Breeds</h2>
-      <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4" id="big-breeds">
+      <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4">
 
         <a onclick="addToJumbotron('https://images.dog.ceo/breeds/labrador/n02099712_2441.jpg', 'Labrador')">
           <img class="img-fluid rounded" src="https://images.dog.ceo/breeds/labrador/n02099712_2441.jpg">
@@ -60,9 +69,9 @@
     </div>
 
     <!-- Small Breeds -->
-    <div class="col col-12 col-md-6">
+    <div class="col col-12 col-md-6" id="small-breeds" style="display:none;">
       <h2>Small Breeds</h2>
-      <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4" id="small-breeds">
+      <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4">
 
         <a onclick="addToJumbotron('https://images.dog.ceo/breeds/beagle/n02088364_11136.jpg', 'Beagle')">
           <img class="img-fluid rounded" src="https://images.dog.ceo/breeds/beagle/n02088364_11136.jpg">
@@ -90,7 +99,7 @@
       <strong>Breed Info:</strong> <span id="breed-info-text"></span>
     </div>
 
-    <!-- Random dog fact -->
+    <!-- random dog facts -->
     <div class="my-4">
       <button id="fact-btn" class="btn btn-primary">Get Random Dog Fact</button>
       <p id="dog-fact-text" class="mt-2 text-muted"></p>
@@ -98,7 +107,6 @@
 
   </main>
 
-  <!-- JS -->
   <script src="js/treatCounter.js" defer></script>
   <script src="js/breedSelector.js" defer></script>
   <script src="js/dogPopup.js" defer></script>
@@ -107,25 +115,3 @@
 </body>
 </html>
 
-
-<!-- <!DOCTYPE html>
-
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Vanilla JS Template</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<header class="container">
-  <div class="row">
-    <h1 class="col">Vanilla Template</h1>
-  </div>
-</header>
-  <main class="container">
-    Main Content
-  </main>
-  <script src="js/script.js" defer></script>
-</body>
-</html> -->

@@ -1,26 +1,22 @@
-// Replace featured dog with selected one
-function addToJumbotron(imgUrl, name) {
-  document.getElementById("featured-img").src = imgUrl;
-  document.getElementById("featured-name").textContent = name;
-
-  // Optional: store current featured dog
-  localStorage.setItem("featuredDog", JSON.stringify({ img: imgUrl, name: name }));
+// Function to add selected breed to the Jumbotron
+function addToJumbotron(imageUrl, breedName) {
+  document.getElementById("featured-img").src = imageUrl;
+  document.getElementById("featured-name").textContent = breedName;
 }
 
-// Load saved featured dog from localStorage on page load
-window.onload = function () {
-  const savedDog = localStorage.getItem("featuredDog");
-  if (savedDog) {
-    const { img, name } = JSON.parse(savedDog);
-    addToJumbotron(img, name);
+// Handle breed size selection (Big or Small Breeds)
+document.getElementById("breed-select").addEventListener("change", function() {
+  const selectedBreed = this.value;
+
+  const bigBreeds = document.getElementById("big-breeds");
+  const smallBreeds = document.getElementById("small-breeds");
+
+  // Toggle display based on user selection
+  if (selectedBreed === "big") {
+    bigBreeds.style.display = "block";
+    smallBreeds.style.display = "none";
+  } else if (selectedBreed === "small") {
+    smallBreeds.style.display = "block";
+    bigBreeds.style.display = "none";
   }
-};
-
-// Clear featured dog from localStorage
-function clearFeaturedDog() {
-  localStorage.removeItem("featuredDog");
-  addToJumbotron(
-    "https://images.dog.ceo/breeds/labrador/n02099712_2441.jpg",
-    "Labrador"
-  );
-}
+});
