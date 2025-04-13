@@ -1,4 +1,3 @@
-// Function to add selected breed to the Jumbotron
 function addToJumbotron(imageUrl, breedName) {
   document.getElementById("featured-img").src = imageUrl;
   document.getElementById("featured-name").textContent = breedName;
