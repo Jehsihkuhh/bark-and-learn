@@ -1,36 +1,26 @@
-const breedSelect = document.getElementById('breed-select');
-const bigBreedsDiv = document.querySelector('.big-breeds');
-const smallBreedsDiv = document.querySelector('.small-breeds');
-const placeholder = document.getElementById('placeholder-text');
+// Replace featured dog with selected one
+function addToJumbotron(imgUrl, name) {
+  document.getElementById("featured-img").src = imgUrl;
+  document.getElementById("featured-name").textContent = name;
 
-function showBreedCategory(category) {
-  // Hide all
-  bigBreedsDiv.classList.add('d-none');
-  smallBreedsDiv.classList.add('d-none');
-  placeholder.classList.add('d-none');
-
-  if (category === 'big') {
-    bigBreedsDiv.classList.remove('d-none');
-  } else if (category === 'small') {
-    smallBreedsDiv.classList.remove('d-none');
-  } else {
-    placeholder.classList.remove('d-none');
-  }
+  // Optional: store current featured dog
+  localStorage.setItem("featuredDog", JSON.stringify({ img: imgUrl, name: name }));
 }
 
-// Set up event listener
-breedSelect.addEventListener('change', function () {
-  const selected = this.value;
-  localStorage.setItem('breedPreference', selected); // Save selection
-  showBreedCategory(selected);
-});
-
-// On page load: check localStorage
-window.addEventListener('DOMContentLoaded', () => {
-  const savedBreed = localStorage.getItem('breedPreference');
-
-  if (savedBreed) {
-    breedSelect.value = savedBreed; // Set dropdown value
-    showBreedCategory(savedBreed);  // Show correct images
+// Load saved featured dog from localStorage on page load
+window.onload = function () {
+  const savedDog = localStorage.getItem("featuredDog");
+  if (savedDog) {
+    const { img, name } = JSON.parse(savedDog);
+    addToJumbotron(img, name);
   }
-});
+};
+
+// Clear featured dog from localStorage
+function clearFeaturedDog() {
+  localStorage.removeItem("featuredDog");
+  addToJumbotron(
+    "https://images.dog.ceo/breeds/labrador/n02099712_2441.jpg",
+    "Labrador"
+  );
+}

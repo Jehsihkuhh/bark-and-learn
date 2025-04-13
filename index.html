@@ -26,30 +26,64 @@
     </div>
 
     <!-- Breed category selection -->
-    <div class="my-4">
-      <label for="breed-select" class="form-label">Choose a breed category:</label>
-      <select id="breed-select" class="form-select">
-        <option value="">-- Select one --</option>
-        <option value="big">Big Breeds</option>
-        <option value="small">Little Breeds</option>
-      </select>
+    <!-- Jumbotron -->
+<div class="jumbotron text-center bg-light p-5 mb-4" id="featured-dog">
+  <h1 class="display-5">🐾 Featured Dog</h1>
+  <img id="featured-img" class="img-fluid rounded" src="https://images.dog.ceo/breeds/labrador/n02099712_2441.jpg" style="max-height: 300px;">
+  <h3 id="featured-name" class="mt-3">Labrador</h3>
+</div>
+
+<!-- Dog Gallery Grid -->
+<div class="container">
+  <div class="row">
+    <!-- Big Breeds -->
+    <div class="col col-12 col-md-6">
+      <h2>Big Breeds</h2>
+      <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4" id="big-breeds">
+
+        <a onclick="addToJumbotron('https://images.dog.ceo/breeds/labrador/n02099712_2441.jpg', 'Labrador')">
+          <img class="img-fluid rounded" src="https://images.dog.ceo/breeds/labrador/n02099712_2441.jpg">
+          <h4>Labrador</h4>
+        </a>
+
+        <a onclick="addToJumbotron('https://images.dog.ceo/breeds/husky/n02110185_1469.jpg', 'Husky')">
+          <img class="img-fluid rounded" src="https://images.dog.ceo/breeds/husky/n02110185_1469.jpg">
+          <h4>Husky</h4>
+        </a>
+
+        <a onclick="addToJumbotron('https://images.dog.ceo/breeds/akita/512px-Ainu-Dog.jpg', 'Akita')">
+          <img class="img-fluid rounded" src="https://images.dog.ceo/breeds/akita/512px-Ainu-Dog.jpg">
+          <h4>Akita</h4>
+        </a>
+
+      </div>
     </div>
 
-    <div class="big-breeds">
-      <img src="https://images.dog.ceo/breeds/mastiff/n02108422_4445.jpg" class="img-fluid m-2 rounded" style="max-width: 200px;">
-      <img src="https://images.dog.ceo/breeds/irishwolfhound/n02090721_5072.jpg" class="img-fluid m-2 rounded" style="max-width: 200px;">
-      <img src="https://images.dog.ceo/breeds/greatdanes/n02109047_15536.jpg" class="img-fluid m-2 rounded" style="max-width: 200px;">
+    <!-- Small Breeds -->
+    <div class="col col-12 col-md-6">
+      <h2>Small Breeds</h2>
+      <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4" id="small-breeds">
+
+        <a onclick="addToJumbotron('https://images.dog.ceo/breeds/beagle/n02088364_11136.jpg', 'Beagle')">
+          <img class="img-fluid rounded" src="https://images.dog.ceo/breeds/beagle/n02088364_11136.jpg">
+          <h4>Beagle</h4>
+        </a>
+
+        <a onclick="addToJumbotron('https://images.dog.ceo/breeds/poodle-miniature/n02113712_1573.jpg', 'Poodle')">
+          <img class="img-fluid rounded" src="https://images.dog.ceo/breeds/poodle-miniature/n02113712_1573.jpg">
+          <h4>Poodle</h4>
+        </a>
+
+        <a onclick="addToJumbotron('https://images.dog.ceo/breeds/terrier-yorkshire/n02094433_3342.jpg', 'Yorkshire Terrier')">
+          <img class="img-fluid rounded" src="https://images.dog.ceo/breeds/terrier-yorkshire/n02094433_3342.jpg">
+          <h4>Yorkshire Terrier</h4>
+        </a>
+
+      </div>
     </div>
-    
-    <div class="small-breeds">
-      <img src="https://images.dog.ceo/breeds/chihuahua/n02085620_3146.jpg" class="img-fluid m-2 rounded" style="max-width: 200px;">
-      <img src="https://images.dog.ceo/breeds/pomeranian/n02112018_10047.jpg" class="img-fluid m-2 rounded" style="max-width: 200px;">
-      <img src="https://images.dog.ceo/breeds/terrier-yorkshire/n02094433_4707.jpg" class="img-fluid m-2 rounded" style="max-width: 200px;">
-    </div>
-    
-    
-      <p id="placeholder-text" class="text-muted">Select a breed category to see some dogs!</p>
-    </div>
+  </div>
+</div>
+
 
     <!-- Breed info popup (you can fill this via JS) -->
     <div id="breed-info-popup" class="alert alert-info d-none">
