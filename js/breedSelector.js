@@ -3,7 +3,6 @@ function addToJumbotron(imageUrl, breedName) {
   document.querySelector("#featured-name").textContent = breedName;
 }
 
-
 document.querySelector("#breed-select").addEventListener("change", function() {
   const selectedBreed = this.value;
 
@@ -14,7 +13,8 @@ document.querySelector("#breed-select").addEventListener("change", function() {
   if (selectedBreed === "big") {
     bigBreeds.style.display = "block";
     smallBreeds.style.display = "none";
-  } else if (selectedBreed === "small") {
+  } 
+  else if (selectedBreed === "small") {
     smallBreeds.style.display = "block";
     bigBreeds.style.display = "none";
   }
