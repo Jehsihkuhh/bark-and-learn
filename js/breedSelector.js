@@ -1,16 +1,16 @@
 function addToJumbotron(imageUrl, breedName) {
-  document.getElementById("featured-img").src = imageUrl;
-  document.getElementById("featured-name").textContent = breedName;
+  document.querySelector("#featured-img").src = imageUrl;
+  document.querySelector("#featured-name").textContent = breedName;
 }
 
-// Handle breed size selection (Big or Small Breeds)
-document.getElementById("breed-select").addEventListener("change", function() {
+
+document.querySelector("#breed-select").addEventListener("change", function() {
   const selectedBreed = this.value;
 
-  const bigBreeds = document.getElementById("big-breeds");
-  const smallBreeds = document.getElementById("small-breeds");
+  const bigBreeds = document.querySelector("#big-breeds");
+  const smallBreeds = document.querySelector("#small-breeds");
 
-  // Toggle display based on user selection
+
   if (selectedBreed === "big") {
     bigBreeds.style.display = "block";
     smallBreeds.style.display = "none";
